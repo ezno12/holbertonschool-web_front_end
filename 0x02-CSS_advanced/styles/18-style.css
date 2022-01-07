@@ -120,5 +120,17 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 .nav .nav-item {
-    font-family: n;
+    font-family: var(--nav-item-font-family);
+    font-weight: var(--nav-item-font-weight);
+    font-size: var(--nav-item-font-size);
+    letter-spacing: var(--nav-item-letter-spacing);
+    display: var(--nav-item-display);
+    margin: var(--nav-item-margin);
+}
+.nav .nav-link {
+    display: block;
+    padding: 0.5rem auto 0.5rem auto;
+}
+.nav .nav-link:hover {
+    color: var(--nav-item-link-hover);
 }
