@@ -109,9 +109,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: auto;
     margin-right: auto;
 }
-.footer {
-    padding: var(--footer-padding);
-}
 .navbar-menu {
     float: right;
 }
@@ -163,4 +160,7 @@ ul.row {
 }
 .footer ul {
     text-align: right;
+}
+.footer {
+    padding: var(--footer-padding);
 }
