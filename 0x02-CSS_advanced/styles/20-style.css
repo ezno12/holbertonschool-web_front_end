@@ -141,7 +141,7 @@ ul.row {
     padding: 0;
     list-style-type: none;
 }
-.row:after {
+.row::after {
     content: "";
     display: table;
     clear: both;
