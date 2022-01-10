@@ -77,16 +77,22 @@ a:visited {
 }
 a:hover {
     text-decoration: underline;
-    color: var(--button-hover-color);
-    text-decoration: var(--button-hover-text-decoration);
-    background-color: var(--button-hover-background);
 }
 a:active{
     background-color: var(--color-light-grey);
+}
+.button {
     display: var(--button-display);
+    padding: var(--button-padding);
     border: var(--button-border);
     font-size: var(--button-font-size);
-    text-decoration: var(--button-text-decoration);
+    color: var(--button-color);
+}
+
+.button:hover {
+    color: var(--button-hover-color);
+    text-decoration: var(--button-hover-text-decoration);
+    background-color: var(--button-hover-background);
 }
 .visually-hidden {
     display: none;
