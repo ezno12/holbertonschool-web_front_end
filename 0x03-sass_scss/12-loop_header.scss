@@ -1,0 +1,6 @@
+/* use for to assgin font size for tags */
+@for $i from 1 to 6 {
+    h#{$i} {
+        font-size: #{$i}px;
+    }
+}
