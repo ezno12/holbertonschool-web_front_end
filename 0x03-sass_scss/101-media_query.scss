@@ -1,0 +1,7 @@
+/* assgin font size to specific media screen */
+h1 {
+    font-size: 20px; }
+    @media screen and (max-width : 320px) {
+        h1 {
+            font-size: 14px; } }
+    
