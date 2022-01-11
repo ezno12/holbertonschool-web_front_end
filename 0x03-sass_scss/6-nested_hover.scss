@@ -1,0 +1,6 @@
+/* use nested declaration to assgin color for button with hover */
+button {
+    color: #FF0000;
+    &:hover{
+        color:#00FF00; }
+}
