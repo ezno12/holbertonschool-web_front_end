@@ -1,14 +1,20 @@
 /* assgin font size to specific media screen */
+$font_size: 20px;
+$list_screen_width: 960px 640px 320px;
 h1 {
-    font-size: 20px; }
-    @media screen and (max-width: 960px) {
-      h1 {
-        font-size: 18px; } }
-    @media screen and (max-width: 640px) {
-      h1 {
-        font-size: 16px; } }
-    @media screen and (max-width: 320px) {
-      h1 {
-        font-size: 14px; }
-        h1.small {
-          color: #1D1D1D; } }
+    font-size: $font_size;
+    @each $width in $list_screen_width {
+        font-size: $font_size - 2;
+        @media screen and (max-width: $width) {
+            & {
+                font-size: $font_size;
+                @if $width == 320px {
+                    &.small {
+                        color: #1D1D1D;
+                    }
+                }
+            }
+        }
+        
+    }
+}
