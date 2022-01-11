@@ -1,0 +1,12 @@
+/* use extend style to add style to class */
+.info {
+    font-size: 12px;
+}
+.success {
+    color: #00FF00;
+    @extend .info;
+}
+.warning {
+    color: #FF0000;
+    @extend .info;
+}
