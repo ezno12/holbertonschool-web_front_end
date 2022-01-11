@@ -2,7 +2,6 @@
 @use "sass:math";
 @for $i from 1 to 5 {
     .col-#{$i} {
-        width: math.div(1, $i) * 100%;
-    }
+        width: math.div(1, $i) * 100%; }
     
 }
