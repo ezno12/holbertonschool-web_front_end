@@ -576,7 +576,7 @@
     text-transform: uppercase;
     display: block;
 }
-.post-meta-list [class^="post-meta-"] {
+.post-meta-list [class*="post-meta-"] {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 0.2rem solid var(--color-grey);
