@@ -595,9 +595,9 @@
 .tag-list [class^="li"] {
     display: inline;
 }
-.tag-list [class^="li"]::after {
+.tag-list li::after {
     content: ", ";
 }
-.tag-list [class^="li"]:last-child {
+.tag-list li:last-child {
     content: "";
 }
