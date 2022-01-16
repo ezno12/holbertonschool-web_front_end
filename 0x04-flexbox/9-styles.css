@@ -371,7 +371,7 @@
   .section-latest-news .row {
     flex-direction: row-reverse;   
   }
-  /* Section ABOUT US */
+  /* Section ABOUT US ============================= */
   .section-about-us [class*='col-'] {
       align-self: center;
   }
