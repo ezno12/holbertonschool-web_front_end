@@ -650,7 +650,7 @@
 /* Comment section
     ============================= */
     .post-comments {
-        width: 100%;
+        width: 80%;
         margin: 10rem 0 0 auto;
         padding-left: 7rem;
     }
