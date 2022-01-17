@@ -28,7 +28,7 @@
   
     --text-color: var(--color-black);
     --valid-color: var(--color-green);
-    --error-color: var(--color-red)
+    --error-color: var(--color-red);
   
     --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
