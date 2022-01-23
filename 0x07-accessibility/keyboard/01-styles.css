@@ -684,10 +684,6 @@
       background-color: rgba(0, 0, 0, 0.7);
   }
   
-  .card-work:hover .card-title {
-    opacity: 1;
-  }
-  
   @media only screen and (max-width: 767px) {
   
     .card-work .card-inner {
