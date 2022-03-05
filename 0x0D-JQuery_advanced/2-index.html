@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+
+    </head>
+
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="application/javascript">
+            $(function() {
+                function createTextElement() {
+                    let content = "<table><thead><tr><th>FirstName</th><th>LastName</th></tr><thead><tbody>";
+
+                        lastName = "Salva";
+                        firstName = [ "Guillaume", "Paulette", "Antoine"]
+                        for(i=0; i<3; i++){
+                            content += '<tr><td>' + firstName[i] + '<td>'+  lastName + '</td></tr>';
+                        }
+                        content +="</tbody>";
+                        content += "</table>"
+
+                        let table =content
+                    $("body").append(table);
+                }
+                createTextElement();
+            });
+        </script>
+    </body>
+
+</html>
+
