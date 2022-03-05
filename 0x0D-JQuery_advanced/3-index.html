@@ -13,7 +13,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script type="application/javascript">
             $(function() {
-                function createTextElement() {
+                function createFamilyTree() {
                     $("body").append("<table><thead><tr><th><th><tbody><tr><td><td><tr><td><td><tr><td><td>")
                     $("th").first().text("Firstname").end().last().text("Lastname")
                     const firstName = ["Guillaume", "Paulette", "Antoine"]
@@ -26,10 +26,8 @@
                           .text("Salva")
                         });
                 }
-                createTextElement();
+                createFamilyTree();
             });
         </script>
     </body>
-
 </html>
-
