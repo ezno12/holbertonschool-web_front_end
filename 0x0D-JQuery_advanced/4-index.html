@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+
+    </head>
+
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="application/javascript">
+            $(function() {
+                function createFamilyTree() {
+                    $("body").append("<table><thead><tr><th><th><tbody><tr><td><td><tr><td><td><tr><td><td>")
+                    $("th").first().text("Firstname").end().last().text("Lastname")
+                    const firstName = ["Guillaume", "Paulette", "Antoine"]
+
+                    firstName.forEach((e, i) => {
+                        $(`tr:nth-child(${i + 1}) td`)
+                          .first()
+                          .text(e)
+                          .end()
+                          .last()
+                          .text("Salva")
+                        });
+                        
+                };
+                createFamilyTree();
+                 function replaceFamilyTree() {
+                    $("tbody").html(`
+                      <tr>
+                        <td>Gerard</td>
+                        <td>Bonissa</td>
+                      </tr>
+                    `)
+                  };
+                replaceFamilyTree();
+            });
+        </script>
+    </body>
+</html>
