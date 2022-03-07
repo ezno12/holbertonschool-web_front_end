@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+
+    </head>
+
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="application/javascript">
+            $(function() {
+                function createFamilyTree() {
+                    $("body").append("<table><thead><tr><th><th><tbody>")
+                    $("th").first().text("Firstname").end().last().text("Lastname")
+                }
+                createFamilyTree();
+
+                function addNewMember(firstName, lastName) {
+                    content = ''
+                    content += '<tr><td>' + firstName + '<td>'+  lastName + '<td>' + "(x)" + '</td></tr>';
+                    $("tbody").append(content);
+                    $("td:last-child").css("background-color", "orange")
+                    $("td:last-child" ).click(function() {
+                    $(this).closest('tr').remove();
+                    });
+                }
+                
+                firstNames = ["Guillame", "Arielle", "Fanette", "Gerard", "Victor"]
+                lastNames = ["Salva", "Snizt", "Snizt", "Snizt", "Snizt"]
+                for(i=0; i<5; i++){ 
+                    addNewMember(firstNames[i], lastNames[i]);
+                }
+            });
+        </script>
+    </body>
+</html>
