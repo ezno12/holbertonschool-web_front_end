@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+
+    </head>
+
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="application/javascript">
+            window.onload = (function() {
+                function createSearchForm() {
+                    searchContent = '<form><input type="text"><input type="submit"></form><ul>';
+                    $("body").append(searchContent);
+
+                    // prevent realod the page after input
+                    $('form').submit(function(e) {
+                        e.preventDefault();
+                    });
+                    $("form input:submit").click(function () {
+                        queryWikipedia($("input").first().val());
+                     });
+                }
+                function addNewArticle(id, title, snippet) {
+                    articleContent = '<li><p><span>' + id + ' - </span><b>' + title + '</b></p><p>' + snippet + '</p';
+                    $("ul").append(articleContent);
+                }
+                // get from api function {wikipedia}
+                function queryWikipedia(search) {
+                    let url = "https://en.wikipedia.org/w/api.php";
+                    let params = {
+                        action: "query",
+                        list: "search",
+                        srsearch: search,
+                        format: "json"
+                    }
+                    url = url + "?origin=*";
+                    Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
+
+                    $.get(url).done(function(response, status) {
+                        response.query.search.forEach(function(result){
+                            addNewArticle(result.pageid, result.title, result.snippet)
+                        });
+                    })
+                    
+                   
+                }
+                createSearchForm();
+            });
+        </script>
+    </body>
+</html>
