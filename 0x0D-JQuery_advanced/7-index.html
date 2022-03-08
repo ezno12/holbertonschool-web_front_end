@@ -43,9 +43,11 @@
                     Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
 
                     $.get(url).done(function(response, status) {
-                        response.query.search.forEach(function(result){
-                            addNewArticle(result.pageid, result.title, result.snippet)
-                        });
+                        if (status = "success") {
+                            response.query.search.forEach(function(result){
+                                addNewArticle(result.pageid, result.title, result.snippet)
+                            });
+                        }
                     })
                     
                    
