@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4</title>
+</head>
+<body>
+  <div id="form">
+    <h2>Login to the website</h2>
+    <input id="firstname" placeholder="Firstname" type="text">
+    <input id="email" placeholder="Email" type="text">
+    <button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  <script type="application/javascript">
+
+  function setCookiesAndShowWelcomeMessage() {
+    const firstname = document.getElementById('firstname').value;
+    const email = document.getElementById('email').value;
+    Cookies.set('firstname', firstname, { expires: 10});
+    Cookies.set('email', email, { expires: 10});
+
+    showWelcomeMessageOrForm();
+  }
+  function showCookies() {
+    const paragraph = document.createElement('p');
+
+    const firstname = Cookies.get('firstname');
+    const email = Cookies.get('email');
+
+    document.body.appendChild(paragraph);
+    paragraph.innerHTML = `Email: ${email} - Firstname: ${firstname}`;
+  }
+  function showForm() {
+    const msg = document.getElementById('msg');
+    msg.remove();
+    document.getElementById('form').style.display = 'block';
+  }
+  function hideForm() {
+    document.getElementById('form').style.display = 'none';
+  }
+  function deleteCookiesAndShowForm() {
+    Cookies.remove('firstname');
+    Cookies.remove('email');
+    showForm();
+  }
+  function showWelcomeMessageOrForm() {
+    const firstname = Cookies.get('firstname');
+    const email = Cookies.get('email');
+
+    if (!firstname || !email)
+      showForm();
+    else {
+      hideForm();
+      const msg = document.createElement('h1');
+      const logOut = document.createElement('a');
+      /* add text to tags */
+      msg.innerText = `Welcome ${firstname}`;
+      logOut.innerText = '(logout)';
+      /* Set the attributes */
+      msg.setAttribute('id', 'msg');
+      logOut.setAttribute('onclick', 'deleteCookiesAndShowForm()');
+      /* Styles log Out */
+      logOut.style.cursor = 'pointer';
+      logOut.style.fontWeight = 'normal';
+      logOut.style.fontStyle = 'italic';
+      logOut.style.marginLeft = '10px';
+      /* add tags to DOM */
+      msg.appendChild(logOut);
+      document.body.appendChild(msg);
+    }
+  }
+  </script>
+</body>
+</html>
